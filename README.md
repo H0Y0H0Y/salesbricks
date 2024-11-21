@@ -5,3 +5,4 @@
 - ```npm run test.chromium``` (run all tests in chromium)
 - ```npm run test.firefox``` (run all tests in firefox)
 - ```npm run test.webkit``` (run all tests in webkit)
+- ```npm run show-report``` (open html report)
