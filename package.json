@@ -1,0 +1,20 @@
+{
+  "name": "salesbricks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test.chromium": "npx playwright test --project=chromium",
+    "test.firefox": "npx playwright test --project=firefox",
+    "test.webkit": "npx playwright test --project=webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.9.0"
+  }
+}
