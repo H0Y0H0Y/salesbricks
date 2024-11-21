@@ -20,6 +20,11 @@ type PlanVal =
     | "Enterprise Plan";
 
 class OrderReviewLocators {
+
+    static get buildingYourOrderTitleSelector(): string {
+        return "//*[@data-test='components-buildOrder-title']";
+    }
+
     static get billingScheduleLocator(): string {
         return "//button[@data-test='components-buildOrder-commitment-billingSchedule']";
     }
@@ -100,10 +105,12 @@ export default class OrderReview {
         await this.page.goto(
             "https://app.staging.salesbricks.com/products/platform/new?sku=d4fedad5-4c48-5a6d-b6e6-0381a6490757",
             {
-                waitUntil: "load",
+                waitUntil: 'load',
                 timeout: 50 * 1000
             }
         );
+
+        await this.page.locator(OrderReviewLocators.buildingYourOrderTitleSelector).waitFor({ state: "visible" });
     }
 
     async selectBillingSchedule(schedule: "a monthly" | "an annual"): Promise<void> {
